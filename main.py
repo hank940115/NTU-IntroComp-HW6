@@ -17,47 +17,34 @@ class TicTacToe:
     def check_winner(self):
 
         #*************add your code here*************       
-
-
-
-
-
-
-
-
-
-
+        if self.board[0][0]!=' ' and self.board[0][0]==self.board[1][1] and self.board[0][0]==self.board[2][2]:
+            return True
+        if self.board[0][2]!=' ' and self.board[0][2]==self.board[1][1] and self.board[0][2]==self.board[2][0]:
+            return True
+        for i in range(0, 3):
+            if self.board[i][0]!=' ' and self.board[i][0]==self.board[i][1] and self.board[i][1]==self.board[i][2]:
+                return True
+            if self.board[0][i]!=' ' and self.board[0][i]==self.board[1][i] and self.board[1][i]==self.board[2][i]:
+                return True
+        return False
         #*************end your code here*************
 
     # is_board_full() should return True if the board is full, and False otherwise
     def is_board_full(self):
         
         #*************add your code here*************       
-
-
-
-
-
-
-
-
-
-
+        for row in self.board:
+            for ele in row:
+                if ele==' ':
+                    return False
+        return True
         #*************end your code here*************
     
     #TODO: Implement the play_games() method below
     def play_game(self, input_file, output_file):
         #*************add your code here*************       
-
-
-
-
-                    
-
-
-
-
-
+        with open(input_file, 'r') as r, open(output_file, 'w') as w:
+            
         #*************end your code here*************
 if __name__ == "__main__":
     args = get_args()
